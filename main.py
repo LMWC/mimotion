@@ -83,8 +83,8 @@ def getBeijinTime():
         hour = find.group(1)
         min_ratio = max(math.ceil((int(hour) / 3) - 1), 0)
         max_ratio = math.ceil(int(hour) / 3)
-        min_1 = 8888 * min_ratio
-        max_1 = 8888 * max_ratio
+        min_1 = 6888 * min_ratio
+        max_1 = 6888 * max_ratio
         min_1 = int(K * min_1)
         max_1 = int(K * max_1)
     else:
@@ -231,7 +231,7 @@ def push_wx(desp=""):
     else:
         server_url = f"https://sc.ftqq.com/{sckey}.send"
         params = {
-            "text": '【"[{xxx}]"小米运动步数修改推送】',
+            "text": '【小米运动步数修改推送】',
             "desp": desp
         }
 
