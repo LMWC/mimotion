@@ -77,10 +77,6 @@ def getBeijinTime():
     r = requests.get(url=url, headers=hea)
     if r.status_code == 200:
         result = r.text
-        if int(hour) == 21:
-            a = set_push
-        else:
-            a = false
         pattern = re.compile('nhrs=(\\d+)')
         find = re.search(pattern, result)
         hour = find.group(1)
@@ -90,6 +86,10 @@ def getBeijinTime():
         max_1 = 6677 * max_ratio
         min_1 = int(K * min_1)
         max_1 = int(K * max_1)
+        if int(hour) == 21:
+            a = set_push
+        else:
+            a = false
     else:
         print("获取北京时间失败")
         return
