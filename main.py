@@ -86,7 +86,7 @@ def getBeijinTime():
         max_1 = 6677 * max_ratio
         min_1 = int(K * min_1)
         max_1 = int(K * max_1)
-        if int(hour) == 21:
+        if int(hour) >= 21:
             a = set_push[0]
         else:
             a = set_push[1]
