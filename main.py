@@ -71,13 +71,13 @@ def getBeijinTime():
     K = 0.75
     type = ""
     hea = {'User-Agent': 'Mozilla/5.0'}
-    url = r'https://www.beijing-time.org/t/time.asp'
+    url = r'https://apps.game.qq.com/CommArticle/app/reg/gdate.php'
     if open_get_weather == "True":
         getWeather()
     r = requests.get(url=url, headers=hea)
     if r.status_code == 200:
         result = r.text
-        pattern = re.compile('nhrs=(\\d+)')
+        pattern = re.compile('\\d{4}-\\d{2}-\\d{2} (\\d{2}):\\d{2}:\\d{2}')
         find = re.search(pattern, result)
         hour = find.group(1)
         min_ratio = max(math.ceil((int(hour) / 3) - 1), 0)
@@ -241,8 +241,8 @@ def push_wx(desp=""):
         response = requests.get(server_url, params=params).text
         print(response)
         
-def main_handler(event, context):
-    getBeijinTime()
+#def main_handler(event, context):
+#    getBeijinTime()
 
 if __name__ == "__main__":
     getBeijinTime()
