@@ -239,7 +239,7 @@ def push_wx(desp=""):
         }
 
         response = requests.get(server_url, params=params).text
-        print(response)
+        #print(response)
         
 #def main_handler(event, context):
 #    getBeijinTime()
