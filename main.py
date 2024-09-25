@@ -208,13 +208,12 @@ def main(_user, _passwd, min_1, max_1):
     # print(result)
     return result
 
-
+# 获取时间戳
 def get_time():
     url = 'http://worldtimeapi.org/api/timezone/Asia/Shanghai'
     response = requests.get(url, headers=headers).json()
     t = str(response['unixtime'])+'000'
     return t
-
 
 # 获取app_token
 def get_app_token(login_token):
