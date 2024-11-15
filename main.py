@@ -210,9 +210,9 @@ def main(_user, _passwd, min_1, max_1):
 
 # 获取时间戳
 def get_time():
-    url = 'http://worldtimeapi.org/api/timezone/Asia/Shanghai'
-    response = requests.get(url, headers=headers).json()
-    t = str(response['unixtime'])+'000'
+    url = "http://mshopact.vivo.com.cn/tool/config"
+    response = requests.get(url, headers=self.headers).json()
+    t = response["data"]["nowTime"]
     return t
 
 # 获取app_token
